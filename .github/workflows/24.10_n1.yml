@@ -115,8 +115,8 @@ jobs:
         SW_FLOWOFFLOAD: 0
         SFE_FLOW: 0
 
-    - name: 发布固件
-      uses: softprops/gh-release@main
+    -    - name: 发布固件
+      uses: softprops/action-gh-release@v2
       with:
         tag_name: ImmortalWrt_${{ env.PACKAGED_OUTPUTDATE }}
         files: ${{ env.PACKAGED_OUTPUTPATH }}/*.img.xz
@@ -126,6 +126,8 @@ jobs:
           默认开启 DHCP
           账户: root
           密码: password
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: 删除运行记录
       uses: Mattraks/delete-workflow-runs@main
