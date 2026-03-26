@@ -39,6 +39,13 @@ jobs:
         docker-images: true
         swap-storage: true
 
+    - name: 增加SWAP防止OOM
+      run: |
+        sudo fallocate -l 6G /swapfile
+        sudo chmod 600 /swapfile
+        sudo mkswap /swapfile
+        sudo swapon /swapfile
+
     - name: 初始化编译环境
       env:
         DEBIAN_FRONTEND: noninteractive
