@@ -110,10 +110,10 @@ jobs:
  #       WHOAMI: Skyking1027
  #       SW_FLOWOFFLOAD: 0
  #       SFE_FLOW: 0
-
-     - name: 打包ARM内核
-       uses: OldCoding/amlogic-s9xxx-openwrt@main
-       env:
+        
+    - name: 打包ARM内核
+      uses: OldCoding/amlogic-s9xxx-openwrt@main
+      env:
         OPENWRT_ARMVIRT: openwrt/bin/targets/armsr/armv8/*rootfs.tar.gz
         OPENWRT_VER: ${{ env.REPO_REF }}
         KERNEL_REPO_URL: OldCoding/openwrt_packit_arm
@@ -124,6 +124,7 @@ jobs:
         WHOAMI: Skyking1027
         SW_FLOWOFFLOAD: 0
         SFE_FLOW: 0
+        
         
     - name: 发布固件
       uses: softprops/action-gh-release@master
