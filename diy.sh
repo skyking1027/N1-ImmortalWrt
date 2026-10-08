@@ -10,6 +10,8 @@
 # 克隆自定义包
 #git clone --depth=1 https://github.com/ophub/luci-app-amlogic package/luci-app-amlogic || true
 #git clone --depth=1 https://github.com/Zerogiven-OpenWRT-Packages/luci-app-podman.git package/luci-app-podman || true
-
+git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
+echo "CONFIG_PACKAGE_luci-app-oaf=y" >>.config
+make defconfig
 # 安装 feeds
 ./scripts/feeds install -a
