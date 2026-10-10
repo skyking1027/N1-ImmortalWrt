@@ -1,4 +1,4 @@
-name: Build ImmortalWrt-25.12 for N1
+name: Build ImmortalWrt-24.10 for N1
 
 on:
   workflow_dispatch:
@@ -89,7 +89,7 @@ jobs:
         kernel_repo: ophub/kernel
         kernel_usage: flippy
         openwrt_kernel: 6.12.y
-        builder_name: Winnie-0721
+        builder_name: skyking1027
         
     - name: 发布固件
       uses: softprops/action-gh-release@master
