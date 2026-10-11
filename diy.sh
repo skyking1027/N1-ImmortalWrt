@@ -13,4 +13,5 @@
 #git clone --depth=1 https://github.com/Zerogiven-OpenWRT-Packages/luci-app-podman.git package/luci-app-podman || true
 #git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
-
+# 修改主机名
+sed -i 's/ImmortalWrt/OpenWrt/g' package/base-files/files/bin/config_generate
